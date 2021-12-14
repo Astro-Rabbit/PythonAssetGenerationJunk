@@ -88,7 +88,7 @@ def temp2_8bit(temperature):
     minTemp = 2650
     maxTemp = 37000
 
-    newT = ((np.log10(temperature) - np.log10(minTemp)) / (np.log10(maxTemp) - np.log10(minTemp)))
+    newT = (np.log10(temperature/minTemp)/ np.log10(maxTemp/minTemp))
 
     return np.rint(newT*255)
 
