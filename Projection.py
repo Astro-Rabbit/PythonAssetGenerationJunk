@@ -107,7 +107,7 @@ for i, star in enumerate(Starcoord):
     y_loc = star[1].__ceil__()-1
 
     # if no other data is written to pixel, write this star to current pixel
-    if im[x_loc,y_loc,0] == 0:
+    if ((im[x_loc,y_loc,0] == 0) & (im[x_loc,y_loc,1] == 0)& (im[x_loc,y_loc,2] == 0)& (im[x_loc,y_loc,3] == 0)):
         x_off = (x_loc-0.5)-(star[0]-1)
         y_off = (y_loc-0.5)-(star[1]-1)
 
@@ -136,7 +136,8 @@ for i, star in enumerate(Starcoord):
         for dist in indices:
 
             # if neighbor is empty, right data to it including offset from new pixel to real star location
-            if im[alt_coords[dist][0],alt_coords[dist][1],0] == 0:
+            if ((im[alt_coords[dist][0],alt_coords[dist][1],0] == 0)&(im[alt_coords[dist][0],alt_coords[dist][1],1] == 0)
+                    &(im[alt_coords[dist][0],alt_coords[dist][1],2] == 0)&(im[alt_coords[dist][0],alt_coords[dist][1],3] == 0)):
                 x_off = (alt_coords[dist][0] - 0.5)-(star[0]-1)
                 y_off = (alt_coords[dist][1] - 0.5) -(star[1]-1)
 
