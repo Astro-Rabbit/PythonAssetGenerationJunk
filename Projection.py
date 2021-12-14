@@ -135,7 +135,7 @@ for i, star in enumerate(Starcoord):
         altCheck += 1
         for dist in indices:
 
-            # if neighbor is empty, wright data to it including offset from new pixel to real star location
+            # if neighbor is empty, write data to it including offset from new pixel to real star location
             if ((im[alt_coords[dist][0],alt_coords[dist][1],0] == 0)&(im[alt_coords[dist][0],alt_coords[dist][1],1] == 0)
                     &(im[alt_coords[dist][0],alt_coords[dist][1],2] == 0)&(im[alt_coords[dist][0],alt_coords[dist][1],3] == 0)):
                 x_off = (alt_coords[dist][0] - 0.5)-(star[0]-1)
